@@ -1,3 +1,7 @@
 export default function returnHowManyArguments(...args) {
-  return args.length;
+  let number = 0;
+  for (const _x of args) {
+    number += 1;
+  }
+  return number;
 }
