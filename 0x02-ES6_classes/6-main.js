@@ -1,22 +1,6 @@
-export default class Building {
-  constructor(sqft) {
-    if (this.constructor !== Building) {
-      if (typeof this.evacuationWarningMessage !== 'function') {
-        throw new Error('Class extending Building must override evacuationWarningMessage');
-      }
-    }
-    this.sqft = sqft;
-  }
+import SkyHighBuilding from './6-sky_high.js';
 
-/* getter and setter for sqft */
-  get sqft() {
-    return this._sqft;
-  }
-
-  set sqft(value) {
-    if (typeof value !== 'number') {
-      throw new TypeError('sqft must be a number');
-    }
-    this._sqft = value;
-  }
-}
+const building = new SkyHighBuilding(140, 60);
+console.log(building.sqft);
+console.log(building.floors);
+console.log(building.evacuationWarningMessage());
